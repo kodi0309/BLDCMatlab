@@ -1,0 +1,23 @@
+        % punkt maksymalny
+            czas_max=1;
+            for(i=2:k)
+                if(funkcja_rys(i)==max(funkcja_rys));
+                    czas_max=i;
+                end
+            end
+    
+            plot(Ts(czas_max),funkcja_rys(czas_max),'*k') 
+            text(Ts(czas_max),funkcja_rys(czas_max),'  MAX')
+        
+        
+        % legenda     
+            Vdesc='V:';
+            Vakt=num2str(V);
+            Desc=append(Vdesc, Vakt);
+            VMAXdesc='MAX:';
+            VMAXakt=num2str(funkcja_rys(czas_max));
+            DescMAX=append(VMAXdesc, VMAXakt);
+            TMAXdesc='t:';
+            TMAX=Ts(czas_max);      
+            DescT=append(TMAXdesc,TMAX);
+            legend(Desc,DescMAX,DescT,'Location','southeast','NumColumns',3);
